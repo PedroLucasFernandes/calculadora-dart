@@ -1,61 +1,52 @@
 import "dart:io";
-
 import "Calculadora.dart";
-int contagem = 1;
 
-void main(){
+void main() {
+  bool repita = true;
+  double resultado = 0;
+  String operacao = "operação";
+  Calculadora calculadora = new Calculadora();
 
-bool repita = true;
-double resultado;
-String? operacao;
-Calculadora calculadora = new Calculadora();
+  while (repita) {
+    print("Qual operação você quer realizar?");
+    print('Digite "a" para adição');
+    print('Digite "s" para subtração');
+    print('Digite "m" para multiplicação');
+    print('Digite "d" para divisão');
+    String input = stdin.readLineSync()!;
 
-while(repita){
-  print("Qual operação você quer realizar?");
-  print('Digite "a" para adição');
-  print('Digite "s" para subtração');
-  print('Digite "m" para multiplicação');
-  print('Digite "d" para divisão');
-  String resposta = stdin.readLineSync()!;
-  repita = false;
+    repita = false;
 
-  switch(resposta){
-    case "a":
-      operacao = "adição";
-      
-      calculadora.inserirNumero(operacao);
-      print("O resultado da $operacao é: ${calculadora.adicao()}");
-      
-      break;
-
-    case "s":
-      operacao = "subtração";
-
-      calculadora.inserirNumero(operacao);
-      print("O resultado da $operacao é: ${calculadora.subtracao()}");
-
-      break;
-
-    case "m":
-      operacao = "multiplicação";
-      
-      calculadora.inserirNumero(operacao);
-      print("O resultado da $operacao é: ${calculadora.multiplicacao()}");
-      
-      break;
-
-    case "d":
+    if ({"a", "s", "m", "d"}.contains(input)) {
+      input == "a" ? operacao = "adição" :
+      input == "s" ? operacao = "subtração" :
+      input == "m" ? operacao = "multiplicação" :
       operacao = "divisão";
-
       calculadora.inserirNumero(operacao);
-      print("O resultado da $operacao é: ${calculadora.divisao()}");
-  
-      break;
+    }
 
-    default:
-      print("Valor inválido, tente novamente!");
-      repita = true;
-      break;
+    switch (input) {
+      case "a":
+        resultado = calculadora.adicao();
+        break;
+
+      case "s":
+        resultado = calculadora.subtracao();
+        break;
+
+      case "m":
+        resultado = calculadora.multiplicacao();
+        break;
+
+      case "d":
+        resultado = calculadora.divisao();
+        break;
+
+      default:
+        print("Valor inválido, tente novamente!");
+        repita = true;
     }
   }
+
+  print("O resultado da $operacao é: $resultado");
 }
