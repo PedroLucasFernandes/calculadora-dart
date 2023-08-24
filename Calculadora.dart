@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 class Calculadora{
   double num1 = 0, num2 = 0;
@@ -17,6 +18,16 @@ class Calculadora{
 
   double divisao(){
     return num1 / num2;
+  }
+
+  double potenciacao(){
+    print("Base: $num1 Expoente: $num2");
+    return (pow(num1, num2).toDouble());
+  }
+
+  double radiciacao(){
+    print("Base: $num1 Expoente: $num2");
+    return pow(num1, 1/num2).toDouble();
   }
 
   void inserirNumero(String operacao){

@@ -13,13 +13,17 @@ void main() {
     print('Digite "s" para subtração');
     print('Digite "m" para multiplicação');
     print('Digite "d" para divisão');
+    print('Digite "p" para potenciação');
+    print('Digite "r" para radiciação');
     String input = stdin.readLineSync()!;
 
-    if ({"a", "s", "m", "d"}.contains(input)) {
+    if ({"a", "s", "m", "d", "p", "r"}.contains(input)) {
       input == "a" ? operacao = "adição" :
       input == "s" ? operacao = "subtração" :
       input == "m" ? operacao = "multiplicação" :
-      operacao = "divisão";
+      input == "d" ? operacao = "divisão" :
+      input == "p" ? operacao = "potenciação" :
+      operacao = "radiciação";
       calculadora.inserirNumero(operacao);
       valido = true;
     }
@@ -40,6 +44,14 @@ void main() {
       case "d":
         resultado = calculadora.divisao();
         break;
+
+      case "p":
+      resultado = calculadora.potenciacao();
+      break;
+      
+      case "r":
+      resultado = calculadora.radiciacao();
+      break;
 
       default:
         print("Valor inválido, tente novamente!");
