@@ -2,7 +2,7 @@ import "dart:io";
 import "Calculadora.dart";
 
 void main() {
-  bool repita = true;
+  bool repita = true, valido = true;
   double resultado = 0;
   String operacao = "operação";
   Calculadora calculadora = new Calculadora();
@@ -15,14 +15,13 @@ void main() {
     print('Digite "d" para divisão');
     String input = stdin.readLineSync()!;
 
-    repita = false;
-
     if ({"a", "s", "m", "d"}.contains(input)) {
       input == "a" ? operacao = "adição" :
       input == "s" ? operacao = "subtração" :
       input == "m" ? operacao = "multiplicação" :
       operacao = "divisão";
       calculadora.inserirNumero(operacao);
+      valido = true;
     }
 
     switch (input) {
@@ -45,8 +44,15 @@ void main() {
       default:
         print("Valor inválido, tente novamente!");
         repita = true;
+        valido = false;
+    }
+
+    if(valido){
+      print("O resultado da $operacao é: $resultado");
+      print("Deseja realizar outra operação?");
+      print('Digite "s" para sim ou qualquer outro valor para não.');
+      input = stdin.readLineSync()!; 
+      input == "s" ? repita = true : repita = false;
     }
   }
-
-  print("O resultado da $operacao é: $resultado");
 }
