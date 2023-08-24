@@ -1,8 +1,14 @@
 import "dart:io";
 
+import "Calculadora.dart";
+int contagem = 1;
+
 void main(){
 
 bool repita = true;
+double resultado;
+String? operacao;
+Calculadora calculadora = new Calculadora();
 
 while(repita){
   print("Qual operação você quer realizar?");
@@ -11,54 +17,45 @@ while(repita){
   print('Digite "m" para multiplicação');
   print('Digite "d" para divisão');
   String resposta = stdin.readLineSync()!;
+  repita = false;
 
   switch(resposta){
     case "a":
-      print("Insira o primeiro número para a adição:");
-      double num1 = double.parse(stdin.readLineSync()!);
-      print("Insira o segundo número para a adição:");
-      double num2 = double.parse(stdin.readLineSync()!);
-
-      double soma = num1 + num2;
-      print("O resultado da soma é: $soma");
-      repita = false;
+      operacao = "adição";
+      
+      calculadora.inserirNumero(operacao);
+      print("O resultado da $operacao é: ${calculadora.adicao()}");
+      
       break;
 
     case "s":
-      print("Insira o primeiro número para a subtração:");
-      double num1 = double.parse(stdin.readLineSync()!);
-      print("Insira o segundo número para a subtração:");
-      double num2 = double.parse(stdin.readLineSync()!);
-      
-      double diferenca = num1 - num2;
-      print("O resultado da subtração é: $diferenca");
-      repita = false;
+      operacao = "subtração";
+
+      calculadora.inserirNumero(operacao);
+      print("O resultado da $operacao é: ${calculadora.subtracao()}");
+
       break;
 
     case "m":
-      print("Insira o primeiro número para a multiplicação:");
-      double num1 = double.parse(stdin.readLineSync()!);
-      print("Insira o segundo número para a multiplicação:");
-      double num2 = double.parse(stdin.readLineSync()!);
+      operacao = "multiplicação";
       
-      double mult = num1 * num2;
-      print("O resultado da multiplicação é: $mult");
-      repita = false;
+      calculadora.inserirNumero(operacao);
+      print("O resultado da $operacao é: ${calculadora.multiplicacao()}");
+      
       break;
 
     case "d":
-      print("Insira o primeiro número para a divisão:");
-      double num1 = double.parse(stdin.readLineSync()!);
-      print("Insira o segundo número para a divisão:");
-      double num2 = double.parse(stdin.readLineSync()!);
-      
-      double div = num1 / num2;
-      print("O resultado da divisão é: $div");
-      repita = false;
+      operacao = "divisão";
+
+      calculadora.inserirNumero(operacao);
+      print("O resultado da $operacao é: ${calculadora.divisao()}");
+  
       break;
 
     default:
-      print("Valor inválido, tente novamente!");    
-    }  
+      print("Valor inválido, tente novamente!");
+      repita = true;
+      break;
+    }
   }
 }
