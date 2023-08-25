@@ -41,4 +41,4 @@ Depois do resultado, a calculadora pergunta se você quer realizar mais alguma o
 - Deseja realizar outra operação?
 - Digite "s" para sim ou qualquer outro valor para não.
 
-![Calculadora em funcionamento](https://imgur.com/WaYff32)
+![Calculadora em funcionamento](https://i.imgur.com/WaYff32.png)
