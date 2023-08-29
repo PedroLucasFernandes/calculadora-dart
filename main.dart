@@ -68,7 +68,7 @@ void main() {
     if(valido){
       print("O resultado da $operacao é: $resultado");
       print("Deseja realizar outra operação?");
-      print('Digite "s" para sim ou qualquer outro valor para não.');
+      print('Digite "s" para SIM ou qualquer outro valor para NÃO.');
       input = stdin.readLineSync()!; 
       input == "s" ? repita = true : repita = false;
     }
