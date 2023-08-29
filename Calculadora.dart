@@ -30,10 +30,23 @@ class Calculadora{
     return pow(num1, 1/num2).toDouble();
   }
 
+  double fatorial(){
+    double fatorial = 1;
+    for (int i = 1; i <= num1; i++) {
+      fatorial *= i;
+    }
+    return fatorial;
+  }
+
   void inserirNumero(String operacao){
-  print("Insira o primeiro número para a $operacao:");
-  num1 = double.parse(stdin.readLineSync()!);
-  print("Insira o segundo número para a $operacao:");
-  num2 = double.parse(stdin.readLineSync()!);
+    if(operacao == "fatorial"){
+      print("Insira o número para a $operacao");
+      num1 = double.parse(stdin.readLineSync()!);
+    }else{
+      print("Insira o primeiro número para a $operacao:");
+      num1 = double.parse(stdin.readLineSync()!);
+      print("Insira o segundo número para a $operacao:");
+      num2 = double.parse(stdin.readLineSync()!);
+    } 
   }
 }

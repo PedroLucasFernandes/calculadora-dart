@@ -15,15 +15,17 @@ void main() {
     print('Digite "d" para divisão');
     print('Digite "p" para potenciação');
     print('Digite "r" para radiciação');
+    print('Digite "f" para fatorial');
     String input = stdin.readLineSync()!;
 
-    if ({"a", "s", "m", "d", "p", "r"}.contains(input)) {
+    if ({"a", "s", "m", "d", "p", "r", "f"}.contains(input)) {
       input == "a" ? operacao = "adição" :
       input == "s" ? operacao = "subtração" :
       input == "m" ? operacao = "multiplicação" :
       input == "d" ? operacao = "divisão" :
       input == "p" ? operacao = "potenciação" :
-      operacao = "radiciação";
+      input == "r" ? operacao = "radiciação" :
+      operacao = "fatorial";
       calculadora.inserirNumero(operacao);
       valido = true;
     }
@@ -51,6 +53,10 @@ void main() {
       
       case "r":
       resultado = calculadora.radiciacao();
+      break;
+
+      case "f":
+      resultado = calculadora.fatorial();
       break;
 
       default:
