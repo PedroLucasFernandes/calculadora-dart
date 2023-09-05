@@ -9,22 +9,6 @@ Pedro Lucas Fernandes Ferreira
 ## Proposta
 Programar uma calculadora fácil de ser utilizada, com o intuito educativo de colocar em prática meus conhecimentos de Programação Orientada a Objetos.
 
-## Como foi desenvolvido
-Utilizei o Dart como principal e única linguagem para o projeto, por meio do editor de código Visual Studio Code.
-
-Foram utilizados dois arquivos, o ``main.dart`` é responsável pela execução do programa, e ``Calculadora.dart`` armazena a classe "Calculadora", onde os métodos de input e de processamento do resultado foram inseridos.
-
-### Explicando os métodos
-Sete dos oito métodos presentes no código possuem o único intuito de realizar a operação do resultado. ``calculadora.adicao()`` irá retornar o primeiro número mais (+) o segundo, já ``calculadora.subtracao()`` retorna o primeiro menos (-) o segundo.
-
-As contas matemáticas são feitas através destes métodos, portanto cada uma contém um método próprio. Além dos dois mencionados, também temos ``calculadora.multiplicacao()`` ``calculadora.divisao()`` ``calculadora.potenciacao()``, ``calculadora.radiciacao()`` e ``calculadora.fatorial()``, onde todos esses apenas tem a função de retornar o resultado da operação.
-
-Destaque para as operações de potenciação e radiciação, que utilizam o comando ``pow`` importado da biblioteca ``dart:math``.
-
-Observação: Todos os resultados retornados são do tipo ``double``, ou seja, números decimais.
-
-Por fim, o último método tem o intuito de pedir os números para o usuário, por meio de um ``print()``, e escaneá-los (transformando em ``double``) utilizando o comando ``double.parse(stdin.readLineSync()!)``. A primeira resposta será atribuida para a variável ``num1`` e a segunda em ``num2``. No caso da fatorial, o método pedirá apenas um valor, o ``num1``.
-
 ## Como utilizar o sistema
 Abra o terminal na pasta onde os arquivos se encontram e utilize o comando ``dart main.dart``. Após isso a aplicação já estará em funcionamento.
 
@@ -46,3 +30,19 @@ Depois do resultado, a calculadora pergunta se você quer realizar mais alguma o
 - Digite "s" para SIM ou qualquer outro valor para NÃO.
 
 ![Calculadora em funcionamento](https://i.imgur.com/tLIuz35.png)
+
+## Como foi desenvolvido
+Utilizei o Dart como principal e única linguagem para o projeto, por meio do editor de código Visual Studio Code.
+
+Foram utilizados dois arquivos, o ``main.dart`` é responsável pela execução do programa, e ``Calculadora.dart`` armazena a classe "Calculadora", onde os métodos de input e de processamento do resultado foram inseridos.
+
+### Explicando os métodos
+Sete dos oito métodos presentes no código possuem o único intuito de realizar a operação do resultado. ``calculadora.adicao()`` irá retornar o primeiro número mais (+) o segundo, já ``calculadora.subtracao()`` retorna o primeiro menos (-) o segundo.
+
+As contas matemáticas são feitas através destes métodos, portanto cada uma contém um método próprio. Além dos dois mencionados, também temos ``calculadora.multiplicacao()`` ``calculadora.divisao()`` ``calculadora.potenciacao()``, ``calculadora.radiciacao()`` e ``calculadora.fatorial()``, onde todos esses apenas tem a função de retornar o resultado da operação.
+
+Destaque para as operações de potenciação e radiciação, que utilizam o comando ``pow`` importado da biblioteca ``dart:math``.
+
+Observação: Todos os resultados retornados são do tipo ``double``, ou seja, números decimais.
+
+Por fim, o último método tem o intuito de pedir os números para o usuário, por meio de um ``print()``, e escaneá-los (transformando em ``double``) utilizando o comando ``double.parse(stdin.readLineSync()!)``. A primeira resposta será atribuida para a variável ``num1`` e a segunda em ``num2``. No caso da fatorial, o método pedirá apenas um valor, o ``num1``.
